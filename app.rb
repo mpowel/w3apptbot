@@ -1,9 +1,11 @@
-require "sinatra"
 require 'json'
+require "sinatra"
+require 'active_support/all'
+require "active_support/core_ext"
 require 'sinatra/activerecord'
 require 'rake'
 
-# ----------------------------------------------------------------------
+require 'twilio-ruby'
 
 # Load environment variables using Dotenv. If a .env file exists, it will
 # set environment variables from that file (useful for dev environments)
@@ -13,13 +15,8 @@ configure :development do
 end
 
 
-# require any models 
-# you add to the folder
-# using the following syntax:
-# require_relative './models/<model_name>'
-
-
 # enable sessions for this project
+
 enable :sessions
 
 # ----------------------------------------------------------------------
